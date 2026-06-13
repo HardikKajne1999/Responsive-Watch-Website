@@ -17,7 +17,7 @@ html,body {
 }
 
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a{
@@ -44,6 +44,8 @@ li{
     min-height: 100vh;
     /* background-color: red; */
 }
+
+/* Section 1 */
 nav{
     width: 85%;
     margin: auto;
@@ -65,8 +67,10 @@ header{
     margin: auto;
 }
 .nav-links{
+    position: absolute;
     display: flex;
     gap: 2rem;
+    right: 0;
 }
 .nav-links li a{
     font-size: 1rem;
@@ -81,6 +85,7 @@ header{
     color: var(--dark-blue);
     font-family: "Allison", cursive;
     font-size: 3rem;
+    cursor: pointer;
 }
 .header-heading{
     font-size: 5rem;
@@ -114,7 +119,7 @@ header{
 .primary-btn{
     background-color: var(--light-gray);
 }
-.primary-btn:hover{
+.primary-btn:hover , .section-two button:hover, .section-four-btn:hover{
     transform: scale(1.1);
 }
 .secondary-btn{
@@ -150,9 +155,138 @@ header{
     display: none;
 }
 
+/* Section 2 */
+.section-two{
+    /* min-height: 100vh; */
+    display: flex;
+    align-items: center;
+    
+}
+.section-two-container{
+    width: 100%;
+    height: auto;
+    height: 60vh;
+    /* padding-block: 3rem; */
+    background-color: var(--light-peach);
+    transform: skewY(-6deg);
+    display: flex;
+    align-items: center;
+
+}
+.section-two-img{
+    width: 28rem;
+}
+.content{
+    /* padding-top: 5rem; */
+    width: 80%;
+}
+.section-two-inner-container{
+    transform: skewY(6deg);
+    width: 80%;
+    margin:auto;
+    display: flex;
+    align-items: end;
+    /* margin-block: 1.5rem; */
+    /* background-color: yellowgreen; */
+}
+.section-two-inner-container h1{
+    font-size: 3rem;
+}
+.section-two-inner-container p{
+    max-width: 60%;
+}
+.section-two-price{
+    margin-block: 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.section-two button{
+    padding: 0.85rem 1.25rem;
+    border: 0.15rem solid  var(--light-black);
+    background-color: transparent;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+/* Section three */
+.section-three h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+.card-container{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: var(--light-gray);
+    padding-block: 2rem;
+}
+.card-img{
+    width: 20rem;
+}
+.card-price{
+    font-size: 1.25rem;
+    margin: 0.05rem 0 1.5rem 0;
+}
+
+/* Section four */
+.section-four{
+    display: flex;
+    align-items: center;
+}
+.section-four-container{
+    background-image: url('./assets/watch.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+}
+.section-four-offer{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-family: allison;
+    color: var(--light-peach);
+}
+.section-four-heading{
+    font-size: 4rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.section-four-btn{
+    font-size: 1.05rem;
+    padding: 1rem 1.25rem;
+    border: none;
+    background-color: var(--light-peach);
+    transition: .5s ease;
+    cursor: pointer;
+}
+.section-four-container::before{
+    content:"";
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    inset: 0;
+}
+.section-four .content{
+    z-index: 10;
+}
+
 
 /* Media Query */
-@media screen and (max-width: 500px){
+@media screen and (max-width: 850px){
+    /* Section 1 */
     .logo{
         z-index: 110;
     }
@@ -160,7 +294,7 @@ header{
         display: none;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         background-color: var(--light-gray);
         left: 110%;
@@ -185,4 +319,28 @@ header{
     header{
         justify-content: flex-start;
     }
+    .primary-btn{
+        margin-bottom: 1rem;
+    }
+
+    /* Section 2 */
+    .section-two-inner-container{
+        padding-block: 1.5rem;
+        width: 90%;    
+    }
+    .section-two-inner-container p{
+        max-width: 100%;
+    }
+    .section-two h1{
+        font-size: 2rem;
+    }
+    .section-two-img-container{
+        display: none;
+    }   
+    /* Section three */
+    .card-img{
+        width: 15rem;
+    }
+    /* Section 4 */
+
 }
